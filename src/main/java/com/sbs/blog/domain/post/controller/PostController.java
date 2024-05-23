@@ -11,5 +11,4 @@ public class PostController {
     public String list(){
         return "post/list";
     }
-
 }

@@ -2,6 +2,7 @@ package com.sbs.blog.domain.member.service;
 
 import com.sbs.blog.domain.member.entity.Member;
 import com.sbs.blog.domain.member.repository.MemberRepository;
+import com.sbs.blog.domain.post.entity.Post;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

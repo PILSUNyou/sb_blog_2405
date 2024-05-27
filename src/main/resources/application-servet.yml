@@ -4,9 +4,9 @@ spring:
       client:
         registration:
           kakao:
-            clientId: CLIENT_ID
- mail:
-   password: NEED_TO_INPUT
+            clientId: 7735c3f5847350bf19b87bea56fe8869
+  mail:
+    password: NEED_TO_INPUT
 custom:
   security:
     oauth2:

@@ -2,7 +2,6 @@ package com.sbs.blog.domain.member.service;
 
 import com.sbs.blog.domain.member.entity.Member;
 import com.sbs.blog.domain.member.repository.MemberRepository;
-import com.sbs.blog.domain.post.entity.Post;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -13,7 +12,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public Member signup(String username, String password, String nickname, String email){
+    public void signup(String username, String password, String nickname, String email){
         Member member = Member
                 .builder()
                 .username(username)
@@ -22,6 +21,6 @@ public class MemberService {
                 .email(email)
                 .build();
 
-        return memberRepository.save(member);
+        memberRepository.save(member);
     }
 }

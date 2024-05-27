@@ -1,5 +1,55 @@
-<div>
-    메인
-    <a href="/member/login">로그인</a>
-    <a href="/member/signup">회원가입</a>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인메뉴 탑바</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body style="background-image:url('https://cdn.crowdpic.net/detail-thumb/thumb_d_37453125BCADF055749599B7726A6ED7.jpg')">
+<div class="top_bar_section">
+    <div class="top_container">
+        <div class="nav_bar">
+            <div class="main_logo">
+                <img src="https://github.com/PILSUNyou/Project_1/assets/156152342/7c922512-6d5a-4622-8dd6-a99bc2076cf3" alt="메인메뉴">
+            </div>
+            <div class="search_bar">
+                <input type="text" placeholder="레시피 검색">
+                <button class="custom-btn btn-13">검 색</button>
+            </div>
+            <div class="user_page">
+                <img src="https://recipe1.ezmember.co.kr/img/ico_user.png" alt="로그인">
+            </div>
+        </div>
+    </div>
+    <div class="middle_container">
+        <div class="nav_bar">
+            <ul>
+                <li>
+                    <a href="#">추  천</a>
+                </li>
+                <li>
+                    <a href="#">레시피</a>
+                    <ul>
+                        <li><a href="#">한식</a></li>
+                        <li><a href="#">중식</a></li>
+                        <li><a href="#">일식</a></li>
+                        <li><a href="#">양식</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">쉐프랭킹</a>
+                </li>
+                <li>
+                    <a href="#">스토어</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottom_container"></div>
 </div>
+</body>
+
+</html>

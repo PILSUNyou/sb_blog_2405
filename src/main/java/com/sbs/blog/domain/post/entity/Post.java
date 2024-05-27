@@ -9,7 +9,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
-import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDateTime;
 
@@ -20,9 +19,9 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @ToString
 public class Post extends BaseEntity {
+    private long id;
     private String title;
     private String content;
-    @CreatedDate
     private LocalDateTime createDate;
     @ManyToOne
     private Member author;

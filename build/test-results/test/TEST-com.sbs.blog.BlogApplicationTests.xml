@@ -1,16 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.sbs.blog.BlogApplicationTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2024-05-24T06:38:19" hostname="DESKTOP-UC1D1JA" time="0.506">
+<testsuite name="com.sbs.blog.BlogApplicationTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2024-05-24T08:41:18" hostname="DESKTOP-UC1D1JA" time="0.654">
   <properties/>
-  <testcase name="createId()" classname="com.sbs.blog.BlogApplicationTests" time="0.506">
-    <failure message="java.lang.NullPointerException: Cannot invoke &quot;com.sbs.blog.domain.member.service.MemberService.signup(String, String, String, String)&quot; because &quot;this.memberService&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;com.sbs.blog.domain.member.service.MemberService.signup(String, String, String, String)&quot; because &quot;this.memberService&quot; is null
-	at com.sbs.blog.BlogApplicationTests.createId(BlogApplicationTests.java:36)
+  <testcase name="contextLoads()" classname="com.sbs.blog.BlogApplicationTests" time="0.654">
+    <failure message="org.springframework.dao.InvalidDataAccessApiUsageException: Unsupported primitive id type long" type="org.springframework.dao.InvalidDataAccessApiUsageException">org.springframework.dao.InvalidDataAccessApiUsageException: Unsupported primitive id type long
+	at app//org.springframework.orm.jpa.EntityManagerFactoryUtils.convertJpaAccessExceptionIfPossible(EntityManagerFactoryUtils.java:371)
+	at app//org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:246)
+	at app//org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:550)
+	at app//org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+	at app//org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:335)
+	at app//org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at app/jdk.proxy3/jdk.proxy3.$Proxy135.save(Unknown Source)
+	at app//com.sbs.blog.domain.post.service.PostService.create(PostService.java:30)
+	at app//com.sbs.blog.BlogApplicationTests.contextLoads(BlogApplicationTests.java:25)
+	at java.base@21.0.2/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.2/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.2/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.IllegalArgumentException: Unsupported primitive id type long
+	at org.springframework.data.repository.core.support.AbstractEntityInformation.isNew(AbstractEntityInformation.java:55)
+	at org.springframework.data.jpa.repository.support.JpaMetamodelEntityInformation.isNew(JpaMetamodelEntityInformation.java:224)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:617)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	... 12 more
 </failure>
   </testcase>
-  <system-out><![CDATA[15:38:15.017 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.sbs.blog.BlogApplicationTests]: BlogApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-15:38:15.128 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.sbs.blog.BlogApplication for test class com.sbs.blog.BlogApplicationTests
+  <system-out><![CDATA[17:41:14.165 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.sbs.blog.BlogApplicationTests]: BlogApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:41:14.327 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.sbs.blog.BlogApplication for test class com.sbs.blog.BlogApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -20,22 +59,22 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.5)
 
-2024-05-24T15:38:15.557+09:00  INFO 19400 --- [    Test worker] com.sbs.blog.BlogApplicationTests        : Starting BlogApplicationTests using Java 21.0.2 with PID 19400 (started by dbyo1 in C:\Users\dbyo1\IdeaProjects\blog_create)
-2024-05-24T15:38:15.557+09:00  INFO 19400 --- [    Test worker] com.sbs.blog.BlogApplicationTests        : The following 2 profiles are active: "secret", "dev"
-2024-05-24T15:38:16.179+09:00  INFO 19400 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-24T15:38:16.242+09:00  INFO 19400 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces.
-2024-05-24T15:38:16.745+09:00  INFO 19400 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-24T15:38:16.824+09:00  INFO 19400 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-05-24T15:38:16.856+09:00  INFO 19400 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-24T15:38:17.108+09:00  INFO 19400 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-24T15:38:17.139+09:00  INFO 19400 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-24T15:38:17.218+09:00  INFO 19400 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@61554b6b
-2024-05-24T15:38:17.218+09:00  INFO 19400 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-24T15:38:17.993+09:00  INFO 19400 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-24T15:38:18.056+09:00  INFO 19400 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-24T15:38:18.449+09:00  WARN 19400 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-24T15:38:18.842+09:00  INFO 19400 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@17b9c9ff, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b45f7ef, org.springframework.security.web.context.SecurityContextHolderFilter@f047670, org.springframework.security.web.header.HeaderWriterFilter@2f0b5d79, org.springframework.web.filter.CorsFilter@5da41d02, org.springframework.security.web.csrf.CsrfFilter@23c61c1b, org.springframework.security.web.authentication.logout.LogoutFilter@52518ee1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7c7a4986, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@27d44578, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2446597e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@17d837ab, org.springframework.security.web.access.ExceptionTranslationFilter@1a0e5c0c, org.springframework.security.web.access.intercept.AuthorizationFilter@29280ca6]
-2024-05-24T15:38:19.188+09:00  INFO 19400 --- [    Test worker] com.sbs.blog.BlogApplicationTests        : Started BlogApplicationTests in 3.882 seconds (process running for 5.063)
+2024-05-24T17:41:14.841+09:00  INFO 10160 --- [    Test worker] com.sbs.blog.BlogApplicationTests        : Starting BlogApplicationTests using Java 21.0.2 with PID 10160 (started by dbyo1 in C:\Users\dbyo1\IdeaProjects\blog_create)
+2024-05-24T17:41:14.850+09:00  INFO 10160 --- [    Test worker] com.sbs.blog.BlogApplicationTests        : The following 2 profiles are active: "secret", "dev"
+2024-05-24T17:41:15.548+09:00  INFO 10160 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-24T17:41:15.611+09:00  INFO 10160 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 2 JPA repository interfaces.
+2024-05-24T17:41:16.152+09:00  INFO 10160 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-24T17:41:16.216+09:00  INFO 10160 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-24T17:41:16.248+09:00  INFO 10160 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-24T17:41:16.500+09:00  INFO 10160 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-24T17:41:16.533+09:00  INFO 10160 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-24T17:41:16.642+09:00  INFO 10160 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@9f1ca74
+2024-05-24T17:41:16.642+09:00  INFO 10160 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-24T17:41:17.618+09:00  INFO 10160 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-24T17:41:17.744+09:00  INFO 10160 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-24T17:41:18.200+09:00  WARN 10160 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-24T17:41:18.601+09:00  INFO 10160 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@54faa040, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35d4fecf, org.springframework.security.web.context.SecurityContextHolderFilter@755fdfad, org.springframework.security.web.header.HeaderWriterFilter@5aa2758a, org.springframework.web.filter.CorsFilter@22195d06, org.springframework.security.web.csrf.CsrfFilter@6abca7a6, org.springframework.security.web.authentication.logout.LogoutFilter@16160a37, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@58fb5b8f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2d91147b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1930e8ef, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f591b2e, org.springframework.security.web.access.ExceptionTranslationFilter@57cc0333, org.springframework.security.web.access.intercept.AuthorizationFilter@379df603]
+2024-05-24T17:41:18.971+09:00  INFO 10160 --- [    Test worker] com.sbs.blog.BlogApplicationTests        : Started BlogApplicationTests in 4.422 seconds (process running for 5.91)
 ]]></system-out>
   <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\dbyo1\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.13\979ce25f7d3096a2e82214ba7dc972a05ce7a171\byte-buddy-agent-1.14.13.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning

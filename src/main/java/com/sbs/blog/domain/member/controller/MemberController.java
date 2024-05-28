@@ -1,5 +1,6 @@
 package com.sbs.blog.domain.member.controller;
 
+import com.sbs.blog.domain.email.EmailService;
 import com.sbs.blog.domain.member.service.MemberService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MemberController {
 
     private final MemberService memberService;
-
+    private final EmailService emailService;
     @PreAuthorize("isAnonymous()")
     @GetMapping("/login")
     public String loginPage(){
@@ -36,7 +37,7 @@ public class MemberController {
     public String signup(@Valid SignForm signForm){
 
         memberService.signup(signForm.getUsername(),signForm.getPassword(),signForm.getNickname(), signForm.getEmail());
-
+        emailService.send(signForm.getEmail(), "서비스 가입을 환영합니다.", "즐거움이 가득하시길 바랍니다.^^");
         return "redirect:/member/login";
     }
 
